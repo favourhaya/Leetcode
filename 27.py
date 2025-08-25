@@ -4,25 +4,13 @@ class Solution:
         pointer2 = len(nums) -1
         c = 0
 
-        if len(nums) == 1:
-            print("ASd")
-            if nums[0] == val:
-                print("asdf")
-                del nums[0]
-
-        mid = len(nums) // 2
 
 
-        while pointer1  < mid or pointer2  > mid :
-
-            if nums[pointer2] == val:
-                pointer2 -= 1
-
-            if nums[pointer1] == val:
-                nums[pointer1],nums[pointer2] =  nums[pointer2],nums[pointer1]
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[c] = nums[i]
                 c+=1
-            else:
-                pointer1 += 1
-        
-        if c != 0:
-            del nums[len(nums)-c-1:]
+            i += 1
+        return c
+
+            
